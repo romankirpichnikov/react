@@ -10,4 +10,5 @@ const product = {
   Description: "asdasd sad as das d asd as das d asd as da sdas d asd asd",
   Discount: true
 };
+
 ReactDom.render(<App product={product} />, document.getElementById("root"));

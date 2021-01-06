@@ -2,6 +2,10 @@ import React from "react";
 
 class ProductCard extends React.Component {
   render() {
+    if (!this.props.product) {
+      return <div>Empty product</div>;
+    }
+
     const {
       product: { Title, Price, Description, Cover }
     } = this.props;

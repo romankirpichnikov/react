@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "parcel serve ./src/index.html",
     "build": "parcel build ./src/index.html"
   },
@@ -23,6 +23,10 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@babel/register": "^7.12.10",
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.2",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3",
     "parcel": "^2.0.0-beta.1"
   },
   "dependencies": {
