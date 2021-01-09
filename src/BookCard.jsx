@@ -3,11 +3,11 @@ import React from "react";
 class BookCard extends React.Component {
   render() {
     if (!this.props.book) {
-      return <div>Empty book card</div>
+      return <div>Empty books card</div>;
     }
 
     const {
-      book: { Title, Price, Description, Cover, SubscribeInfo }
+      book: { Title, Price, Description, Cover }
     } = this.props;
 
     return (
@@ -19,22 +19,6 @@ class BookCard extends React.Component {
           <div>{Title}</div>
           <div>{Price}</div>
           <div>{Description}</div>
-          <div>
-            <span style={styles.span}>MinPrice: </span>
-            {SubscribeInfo.MinPrice}
-          </div>
-          <div>
-            <span style={styles.span}>DesiredPrice: </span>
-            {SubscribeInfo.DesiredPrice}
-          </div>
-          <div>
-            <span style={styles.span}>CollectedAmount: </span>
-            {SubscribeInfo.CollectedAmount} %<progress value={SubscribeInfo.CollectedAmount} max="100" />
-          </div>
-          <div>
-            <span style={styles.span}>ExpectedAmount: </span>
-            {SubscribeInfo.ExpectedAmount}
-          </div>
         </div>
       </div>
     );
@@ -55,8 +39,5 @@ const styles = {
   },
   cardBody: {
     flex: "1"
-  },
-  span: {
-    fontWeight: "bold"
   }
 };
