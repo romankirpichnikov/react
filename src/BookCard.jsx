@@ -1,13 +1,13 @@
 import React from "react";
 
-class ProductCard extends React.Component {
+class BookCard extends React.Component {
   render() {
-    if (!this.props.product) {
-      return <div>Empty product</div>;
+    if (!this.props.book) {
+      return <div>Empty books card</div>;
     }
 
     const {
-      product: { Title, Price, Description, Cover }
+      book: { Title, Price, Description, Cover }
     } = this.props;
 
     return (
@@ -25,7 +25,7 @@ class ProductCard extends React.Component {
   }
 }
 
-export default ProductCard;
+export default BookCard;
 
 const styles = {
   container: {

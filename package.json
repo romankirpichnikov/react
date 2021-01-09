@@ -2,11 +2,11 @@
   "name": "react",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "jest",
     "start": "parcel serve ./src/index.html",
-    "build": "parcel build ./src/index.html"
+    "build": "NODE_ENV=production parcel build ./src/index.html --public-url ./"
   },
   "repository": {
     "type": "git",
