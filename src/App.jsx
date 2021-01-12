@@ -5,7 +5,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="subscribe" style={styles.subscribeContainer}>
-        <Subscribe books={this.props.books} author={this.props.author} />
+        <Subscribe book={this.props.book} author={this.props.author} />
       </div>
     );
   }

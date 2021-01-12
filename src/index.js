@@ -2,7 +2,7 @@ import ReactDom from "react-dom";
 import React from "react";
 import App from "./App";
 
-const books = [
+const book =
   {
     Id: 1,
     Title: "Вторая жизнь Уве",
@@ -19,8 +19,7 @@ const books = [
       CollectedAmount: "25",
       ExpectedAmount: "1000000"
     }
-  }
-];
+  };
 
 const author = {
   Name: "Фредрик",
@@ -32,6 +31,6 @@ const author = {
 };
 
 ReactDom.render(
-  <App books={books} author={author} />,
+  <App book={book} author={author} />,
   document.getElementById("root")
 );

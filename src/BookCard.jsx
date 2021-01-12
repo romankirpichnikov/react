@@ -3,7 +3,7 @@ import React from "react";
 class BookCard extends React.Component {
   render() {
     if (!this.props.book) {
-      return <div>Empty books card</div>;
+      return <div>Empty book card</div>
     }
 
     const {

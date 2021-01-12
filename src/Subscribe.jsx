@@ -1,6 +1,6 @@
 import React from "react";
 import AuthorCard from "./AuthorCard";
-import BookCards from "./BookCards";
+import BookCard from "./BookCard";
 
 class Subscribe extends React.Component {
   render() {
@@ -9,8 +9,8 @@ class Subscribe extends React.Component {
         <div className="AuthorCard">
           <AuthorCard author={this.props.author} />
         </div>
-        <div className="books" style={styles.books}>
-          <BookCards books={this.props.books} />
+        <div className="book" style={styles.book}>
+          <BookCard book={this.props.book} />;
         </div>
       </div>
     );
@@ -25,7 +25,7 @@ const styles = {
     margin: "0 auto",
     padding: "0 10% 0 0"
   },
-  books: {
+  book: {
     padding: "0 0 0 5%"
   }
 };

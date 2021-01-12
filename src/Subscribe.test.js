@@ -4,7 +4,7 @@ import "@testing-library/jest-dom/extend-expect";
 import Subscribe from "./Subscribe";
 
 describe("render subscribe card", () => {
-  const books = [
+  const book =
     {
       Id: 1,
       Title: "Вторая жизнь Уве",
@@ -21,8 +21,7 @@ describe("render subscribe card", () => {
         CollectedAmount: "25",
         ExpectedAmount: "1000000"
       }
-    }
-  ];
+    };
 
   const author = {
     Name: "Фредрик",
@@ -47,23 +46,23 @@ describe("render subscribe card", () => {
       expect(getByText("Empty author profile")).toBeInTheDocument();
     });
   });
-  describe("render books Card", () => {
-    test("render books", () => {
-      const { getByText } = render(<Subscribe books={books} />);
+  describe("render book Card", () => {
+    test("render book", () => {
+      const { getByText } = render(<Subscribe book={book} />);
 
-      expect(getByText(books[0].Title)).toBeInTheDocument();
-      expect(getByText(books[0].Price)).toBeInTheDocument();
-      expect(getByText(books[0].Description)).toBeInTheDocument();
-      expect(getByText(books[0].SubscribeInfo.MinPrice)).toBeInTheDocument();
-      expect(getByText(books[0].SubscribeInfo.DesiredPrice)).toBeInTheDocument();
-      expect(getByText(`${books[0].SubscribeInfo.CollectedAmount} %`)).toBeInTheDocument();
-      expect(getByText(books[0].SubscribeInfo.ExpectedAmount)).toBeInTheDocument();
+      expect(getByText(book.Title)).toBeInTheDocument();
+      expect(getByText(book.Price)).toBeInTheDocument();
+      expect(getByText(book.Description)).toBeInTheDocument();
+      expect(getByText(book.SubscribeInfo.MinPrice)).toBeInTheDocument();
+      expect(getByText(book.SubscribeInfo.DesiredPrice)).toBeInTheDocument();
+      expect(getByText(`${book.SubscribeInfo.CollectedAmount} %`)).toBeInTheDocument();
+      expect(getByText(book.SubscribeInfo.ExpectedAmount)).toBeInTheDocument();
     });
 
-    test("render an empty books", () => {
+    test("render an empty book", () => {
       const { getByText } = render(<Subscribe />);
 
-      expect(getByText("Empty books collection")).toBeInTheDocument();
+      expect(getByText("Empty book card")).toBeInTheDocument();
     });
   });
 });
