@@ -12,10 +12,6 @@ class AuthorCard extends React.Component {
         EMail,
         Bio,
         Avatar,
-        MinPrice,
-        DesiredPrice,
-        CollectedAmount,
-        ExpectedAmount
       }
     } = this.props;
 
@@ -37,22 +33,6 @@ class AuthorCard extends React.Component {
             <span style={styles.span}>Bio: </span>
             {Bio}
           </div>
-          <div>
-            <span style={styles.span}>MinPrice: </span>
-            {MinPrice}
-          </div>
-          <div>
-            <span style={styles.span}>DesiredPrice: </span>
-            {DesiredPrice}
-          </div>
-          <div>
-            <span style={styles.span}>CollectedAmount: </span>
-            {CollectedAmount} %<progress value={CollectedAmount} max="100" />
-          </div>
-          <div>
-            <span style={styles.span}>ExpectedAmount: </span>
-            {ExpectedAmount}
-          </div>
         </div>
       </div>
     );
@@ -73,8 +53,5 @@ const styles = {
   },
   cardBody: {
     flex: "1"
-  },
-  span: {
-    fontWeight: "bold"
   }
 };

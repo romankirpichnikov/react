@@ -14,7 +14,13 @@ describe("render subscribe card", () => {
       Price: "387",
       Pages: "384",
       Language: "RU",
-      Progress: "50"
+      Progress: "50",
+      SubscribeInfo: {
+        MinPrice: 500,
+        DesiredPrice: "999",
+        CollectedAmount: "25",
+        ExpectedAmount: "1000000"
+      }
     }
   ];
 
@@ -25,10 +31,6 @@ describe("render subscribe card", () => {
       "https://img.yakaboo.ua/media/entity/author/cache/1/thumbnail/540x/17f82f742ffe127f42dca9de82fb58b1/b/a/backman1.jpg",
     Bio:
       "Фредрик Бакман – известный шведский блогер, колумнист, фрилансер, популярный писатель. Его книги - бестселлеры переведены на 25 языков мира, а англоязычная версия романа «Вторая жизнь Уве» 42 недели возглавляла рейтинги «New York Times». Совокупный тираж книг - более пяти миллионов экземпляров, продаваемых в 40 странах мира. В 2013 году Фредрик признан самым успешным автором Швеции",
-    MinPrice: books[0].Price,
-    DesiredPrice: "999",
-    CollectedAmount: "25",
-    ExpectedAmount: "1000000"
   };
 
   describe("render author profile", () => {
@@ -37,10 +39,6 @@ describe("render subscribe card", () => {
 
       expect(getByText(author.Name)).toBeInTheDocument();
       expect(getByText(author.Bio)).toBeInTheDocument();
-      expect(getByText(author.MinPrice)).toBeInTheDocument();
-      expect(getByText(author.DesiredPrice)).toBeInTheDocument();
-      expect(getByText(`${author.CollectedAmount} %`)).toBeInTheDocument();
-      expect(getByText(author.ExpectedAmount)).toBeInTheDocument();
     });
 
     test("render an empty author profile", () => {
@@ -56,6 +54,10 @@ describe("render subscribe card", () => {
       expect(getByText(books[0].Title)).toBeInTheDocument();
       expect(getByText(books[0].Price)).toBeInTheDocument();
       expect(getByText(books[0].Description)).toBeInTheDocument();
+      expect(getByText(books[0].SubscribeInfo.MinPrice)).toBeInTheDocument();
+      expect(getByText(books[0].SubscribeInfo.DesiredPrice)).toBeInTheDocument();
+      expect(getByText(`${books[0].SubscribeInfo.CollectedAmount} %`)).toBeInTheDocument();
+      expect(getByText(books[0].SubscribeInfo.ExpectedAmount)).toBeInTheDocument();
     });
 
     test("render an empty books", () => {

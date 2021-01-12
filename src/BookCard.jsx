@@ -7,7 +7,7 @@ class BookCard extends React.Component {
     }
 
     const {
-      book: { Title, Price, Description, Cover }
+      book: { Title, Price, Description, Cover, SubscribeInfo }
     } = this.props;
 
     return (
@@ -19,6 +19,22 @@ class BookCard extends React.Component {
           <div>{Title}</div>
           <div>{Price}</div>
           <div>{Description}</div>
+          <div>
+            <span style={styles.span}>MinPrice: </span>
+            {SubscribeInfo.MinPrice}
+          </div>
+          <div>
+            <span style={styles.span}>DesiredPrice: </span>
+            {SubscribeInfo.DesiredPrice}
+          </div>
+          <div>
+            <span style={styles.span}>CollectedAmount: </span>
+            {SubscribeInfo.CollectedAmount} %<progress value={SubscribeInfo.CollectedAmount} max="100" />
+          </div>
+          <div>
+            <span style={styles.span}>ExpectedAmount: </span>
+            {SubscribeInfo.ExpectedAmount}
+          </div>
         </div>
       </div>
     );
@@ -39,5 +55,8 @@ const styles = {
   },
   cardBody: {
     flex: "1"
+  },
+  span: {
+    fontWeight: "bold"
   }
 };
