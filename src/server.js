@@ -5,7 +5,7 @@ const app = express();
 
 const render = require("./render").default;
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send(`
     <!DOCTYPE html>
     <html>
@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
         </title>
         <body>
           <div id="root">${render()}</div>
-          <script src="index.js"></script>
+          <script src="/index.js"></script>
         </body>
       </head>
     </html>

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import App from "./App";
 
-const books = [
+const book =
   {
     Id: 1,
     Title: "Вторая жизнь Уве",
@@ -12,9 +12,14 @@ const books = [
     Price: "387",
     Pages: "384",
     Language: "RU",
-    Progress: "50"
-  }
-];
+    Progress: "50",
+    SubscribeInfo: {
+      MinPrice: 500,
+      DesiredPrice: "999",
+      CollectedAmount: "25",
+      ExpectedAmount: "1000000"
+    }
+  };
 
 const author = {
   Name: "Фредрик",
@@ -23,12 +28,8 @@ const author = {
     "https://img.yakaboo.ua/media/entity/author/cache/1/thumbnail/540x/17f82f742ffe127f42dca9de82fb58b1/b/a/backman1.jpg",
   Bio:
     "Фредрик Бакман – известный шведский блогер, колумнист, фрилансер, популярный писатель. Его книги - бестселлеры переведены на 25 языков мира, а англоязычная версия романа «Вторая жизнь Уве» 42 недели возглавляла рейтинги «New York Times». Совокупный тираж книг - более пяти миллионов экземпляров, продаваемых в 40 странах мира. В 2013 году Фредрик признан самым успешным автором Швеции",
-  MinPrice: books[0].Price,
-  DesiredPrice: "999",
-  CollectedAmount: "25",
-  ExpectedAmount: "1000000"
 };
 
-const render = () => ReactDOMServer.renderToString(<App books={books} author={author} />);
+const render = () => ReactDOMServer.renderToString(<App book={book} author={author} />);
 
 export default render;
