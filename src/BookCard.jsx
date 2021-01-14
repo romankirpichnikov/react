@@ -3,7 +3,7 @@ import React from "react";
 class BookCard extends React.Component {
   render() {
     if (!this.props.book) {
-      return <div>Empty book card</div>
+      return <div>Empty book card</div>;
     }
 
     const {
@@ -29,7 +29,8 @@ class BookCard extends React.Component {
           </div>
           <div>
             <span style={styles.span}>CollectedAmount: </span>
-            {SubscribeInfo.CollectedAmount} %<progress value={SubscribeInfo.CollectedAmount} max="100" />
+            {SubscribeInfo.CollectedAmount} %
+            <progress value={SubscribeInfo.CollectedAmount} max="100" />
           </div>
           <div>
             <span style={styles.span}>ExpectedAmount: </span>

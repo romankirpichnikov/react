@@ -7,12 +7,7 @@ class AuthorCard extends React.Component {
     }
 
     const {
-      author: {
-        Name,
-        EMail,
-        Bio,
-        Avatar,
-      }
+      author: { Name, EMail, Bio, Avatar }
     } = this.props;
 
     return (
