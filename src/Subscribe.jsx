@@ -1,14 +1,12 @@
 import React from "react";
-import AuthorCard from "./AuthorCard";
 import BookCard from "./BookCard";
+import Authors from "./Authors";
 
 class Subscribe extends React.Component {
   render() {
     return (
       <div style={styles.subscribeContainer}>
-        <div className="AuthorCard">
-          <AuthorCard author={this.props.author} />
-        </div>
+        <Authors authors={this.props.authors} />
         <div className="book" style={styles.book}>
           <BookCard book={this.props.book} />;
         </div>

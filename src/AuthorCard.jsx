@@ -7,7 +7,7 @@ class AuthorCard extends React.Component {
     }
 
     const {
-      author: { Name, EMail, Bio, Avatar }
+      author: { Id, Name, EMail, Bio, Avatar }
     } = this.props;
 
     return (
@@ -16,6 +16,10 @@ class AuthorCard extends React.Component {
           <img style={styles.image} src={Avatar} alt={Name} />
         </div>
         <div style={styles.cardBody}>
+          <div>
+            <span style={styles.span}>Id: </span>
+            {Id}
+          </div>
           <div>
             <span style={styles.span}>Name: </span>
             {Name}
@@ -38,15 +42,12 @@ export default AuthorCard;
 
 const styles = {
   container: {
-    display: "flex"
+    display: "block"
   },
   imageBox: {
     maxWidth: "200px"
   },
   image: {
     width: "100%"
-  },
-  cardBody: {
-    flex: "1"
   }
 };

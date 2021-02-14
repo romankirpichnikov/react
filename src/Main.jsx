@@ -1,11 +1,11 @@
 import React from "react";
-import Subscribe from "./Subscribe"
+import Subscribe from "./Subscribe";
 
 class Main extends React.Component {
   render() {
     return (
       <main style={styles.main}>
-        <Subscribe book={this.props.book} author={this.props.author} />
+        <Subscribe book={this.props.book} authors={this.props.authors} />
       </main>
     );
   }
@@ -19,5 +19,5 @@ const styles = {
     maxWidth: "60%",
     margin: "0 auto",
     padding: "0 10% 0 0"
-  },
+  }
 };
