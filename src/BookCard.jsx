@@ -1,13 +1,29 @@
 import React from "react";
+import SubscribeModal from './SubscribeModal';
 
 class BookCard extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
+  renderPopularity(subscribers) {
+    switch (true) {
+      case subscribers < 100:
+        return "LOW"
+      case subscribers < 1000:
+        return "MEDIUM"
+      case subscribers > 1000:
+        return "STRONG"
+    }
+  }
+
   render() {
     if (!this.props.book) {
       return <div>Empty book card</div>;
     }
 
     const {
-      book: { Title, Price, Description, Cover, SubscribeInfo }
+      book: { Title, Price, Description, Cover, SubscribeInfo, Subscribers }
     } = this.props;
 
     return (
@@ -36,9 +52,16 @@ class BookCard extends React.Component {
             <span style={styles.span}>ExpectedAmount: </span>
             {SubscribeInfo.ExpectedAmount}
           </div>
+          <div>
+            <span style={styles.span}>POPULARITY: </span>
+            {this.renderPopularity(Subscribers)}
+          </div>
+          <div>
+            <SubscribeModal />
+          </div>
         </div>
       </div>
-    );
+    )
   }
 }
 

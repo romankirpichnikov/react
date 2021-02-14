@@ -15,7 +15,6 @@ class Authors extends React.Component {
     this.setState( state => ({
       isShowAllAuthors: !state.isShowAllAuthors
     }));
-    console.log(this.state)
   }
 
   render() {
