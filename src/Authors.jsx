@@ -18,23 +18,20 @@ class Authors extends React.Component {
   }
 
   render() {
+    const numToDisplay = this.state.isShowAllAuthors ? this.props.authors.length : this.state.authorLimit
+
     return (
       <>
         {
-          this.props.authors.map((author, indx) => {
-            if ((indx < this.state.authorLimit) && this.state.isShowAllAuthors === false) {
-              return <AuthorCard author={author} key={author.Id} />
-            } else if (this.state.isShowAllAuthors === true) {
-              return <AuthorCard author={author} key={author.Id} />
-            }
+          this.props.authors.slice(0, numToDisplay).map((author) => {
+            return <AuthorCard author={author} key={author.Id} />
           })
         }
-        {(()=>{
-          if (this.props.authors.length > this.state.authorLimit) {
-            return <button onClick={this.toggleShowAuthors}>Show all authors</button>
-          }
-        })()
-        }
+      {
+        this.props.authors.length > this.state.authorLimit && (
+          <button onClick={this.toggleShowAuthors}>Show all authors</button>
+        )
+      }
       </>
     );
   }
